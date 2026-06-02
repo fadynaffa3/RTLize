@@ -158,9 +158,9 @@ This gem follows [Semantic Versioning](https://semver.org).
 
 ## Credits
 
-Maintained by [Fady Naffa](https://github.com/fadynaffa3).
+This gem is a continuation of [Marwan Al Jubeh's original RTLize](https://github.com/maljub01/RTLize), which had become outdated and unmaintained. The original commits and history have been preserved. Updated and maintained by [Fady Naffa](https://github.com/fadynaffa3) to support Ruby 4 and Rails 7/8.
 
-Originally inspired by [Dustin Diaz's R2](https://github.com/ded/R2).
+RTLize was originally inspired by [Dustin Diaz's R2](https://github.com/ded/R2).
 
 ## License
 

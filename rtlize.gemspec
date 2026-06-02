@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version     = Rtlize::VERSION
   s.authors     = ["Fady Naffa"]
   s.email       = ["fadynaffa3@gmail.com"]
-  s.homepage    = "https://github.com/fadynaffa3/RTLize"
+  s.homepage    = "https://github.com/fadynaffa3/RTLize-2"
 
   s.executables = ['rtlize']
   s.files       = Dir["{app,bin,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
