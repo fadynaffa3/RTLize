@@ -158,7 +158,9 @@ This gem follows [Semantic Versioning](https://semver.org).
 
 ## Credits
 
-RTLize was inspired by [Dustin Diaz's R2](https://github.com/ded/R2).
+Maintained by [Fady Naffa](https://github.com/fadynaffa3).
+
+Originally inspired by [Dustin Diaz's R2](https://github.com/ded/R2).
 
 ## License
 

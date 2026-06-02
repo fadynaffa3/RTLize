@@ -1,12 +1,12 @@
 require_relative 'lib/rtlize/version'
 
 Gem::Specification.new do |s|
-  s.name        = "rtlize"
+  s.name        = "rtlize-2"
   s.summary     = "Automatic CSS layout switcher (from LTR to RTL)"
   s.version     = Rtlize::VERSION
-  s.authors     = ["Marwan Al Jubeh"]
-  s.email       = ["marwan.al.jubeh@gmail.com"]
-  s.homepage    = "https://github.com/maljub01/RTLize"
+  s.authors     = ["Fady Naffa"]
+  s.email       = ["fadynaffa3@gmail.com"]
+  s.homepage    = "https://github.com/fadynaffa3/RTLize"
 
   s.executables = ['rtlize']
   s.files       = Dir["{app,bin,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
