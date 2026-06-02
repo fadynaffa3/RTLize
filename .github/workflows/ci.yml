@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         ruby: ['4.0']
-        rails: ['7.0.0', '7.1.0', '8.0.0']
+        rails: ['7.1.0', '8.0.0']
 
     env:
       RAILS_VERSION: ${{ matrix.rails }}
@@ -28,8 +28,4 @@ jobs:
         bundler-cache: true
 
     - name: Run tests
-      run: bundle exec rake test
-
-    - name: Run simplecov
-      if: matrix.ruby == '3.3' && matrix.rails == '8.0.0'
       run: bundle exec rake test

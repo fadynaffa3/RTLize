@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rails", ">= 7.0.0"
   s.add_development_dependency "sprockets-rails"
-  s.add_development_dependency "sqlite3", "~> 1.4"
+  s.add_development_dependency "sqlite3", ">= 1.4"
   s.add_development_dependency "simplecov"
 
   s.description = <<~END
