@@ -1,18 +1,23 @@
 module Rtlize
   class RtlProcessor
-    attr_reader :data
+    ALLOWED_EXTENSIONS = %w[css scss sass].freeze
 
-    def initialize(file, &block)
-      @data = block.call
+    def self.call(input)
+      filename = input[:filename]
+      source   = input[:data]
+      context  = input[:environment].context_class.new(input)
+
+      result = run(filename, source, context)
+      context.metadata.merge(data: result)
     end
 
-    def render(context, locals, &block)
-      allowed_extensions = ['sass', 'css', 'scss']
-      extension = context.pathname.basename.to_s.split('.').length > 1 ? context.pathname.basename.to_s.split('.')[-1] : nil
-      if extension && allowed_extensions.include?(extension) && context.pathname.basename.to_s.match(/\.rtl/i)
-        Rtlize::RTLizer.transform(data)
+    def self.run(filename, source, context)
+      basename  = File.basename(filename)
+      extension = basename.split('.').last
+      if ALLOWED_EXTENSIONS.include?(extension) && context.logical_path.to_s.match?(/\.rtl/i)
+        Rtlize::RTLizer.transform(source)
       else
-        data
+        source
       end
     end
   end

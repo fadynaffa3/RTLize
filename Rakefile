@@ -6,18 +6,15 @@ rescue LoadError
 end
 begin
   require 'rdoc/task'
+  RDoc::Task.new(:rdoc) do |rdoc|
+    rdoc.rdoc_dir = 'rdoc'
+    rdoc.title    = 'Rtlize'
+    rdoc.options << '--line-numbers'
+    rdoc.rdoc_files.include('README.md')
+    rdoc.rdoc_files.include('lib/**/*.rb')
+  end
 rescue LoadError
-  require 'rdoc/rdoc'
-  require 'rake/rdoctask'
-  RDoc::Task = Rake::RDocTask
-end
-
-RDoc::Task.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Rtlize'
-  rdoc.options << '--line-numbers'
-  rdoc.rdoc_files.include('README.rdoc')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+  # rdoc is not a default gem in Ruby 4+; skip rdoc task if not available
 end
 
 

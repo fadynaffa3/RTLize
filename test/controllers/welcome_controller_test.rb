@@ -8,13 +8,13 @@ class WelcomeControllerTest < ActionController::TestCase
   end
 
   test "/en" do
-    get :index, :locale => :en
+    get :index, params: { locale: :en }
     assert_select 'html[lang=en]'
     assert_select 'html[dir=ltr]'
   end
 
   test "/ar" do
-    get :index, :locale => :ar
+    get :index, params: { locale: :ar }
     assert_select 'html[lang=ar]'
     assert_select 'html[dir=rtl]'
   end

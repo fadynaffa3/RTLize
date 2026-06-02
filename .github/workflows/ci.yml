@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: ['4.0']
+        rails: ['7.0.0', '7.1.0', '8.0.0']
+
+    env:
+      RAILS_VERSION: ${{ matrix.rails }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
+
+    - name: Run tests
+      run: bundle exec rake test
+
+    - name: Run simplecov
+      if: matrix.ruby == '3.3' && matrix.rails == '8.0.0'
+      run: bundle exec rake test
